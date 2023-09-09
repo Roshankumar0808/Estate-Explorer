@@ -1,8 +1,35 @@
-.propImg{
-    height: 250px;
+.card-img-wrapper{
+    overflow: hidden;
+    position: relative;
 }
-.card{
-    width:300px;
-    height: 350px;
-    margin-right: 0px;
+
+.card:hover img{
+    /* vertical and horizontal zoom effects (1.2times both); */
+    transform:scale(1.2,1.2);
+    /* duration of transition */
+    transition-duration: 500ms;
+    /* transition type ease in/easeout etc */
+    transition-timing-function: ease-out;
+    height: 170px;
+    opacity: .5;
+}
+.card img{
+    /* vertical and horizontal zoom effects (1.2times both); */
+    transform:scale(1,1);
+    /* duration of transition */
+    transition-duration: 500ms;
+    /* transition type ease in/easeout etc */
+    transition-timing-function: ease-out;
+    height: 170px;
+}
+.member-icons{
+    position: absolute;
+    bottom:-35%;
+    left:0;
+    right:0;
+    margin-right: auto;
+    margin-right: auto;
+}
+.card-img-wrapper:hover .member-icons{
+    bottom: 0;
 }
