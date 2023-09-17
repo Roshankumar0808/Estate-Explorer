@@ -1,7 +1,8 @@
 <div class="card ">
       <!-- This is called string interpolation this is fetching value from .ts file export class -->
       <div class="card-img-wrapper">
-      <img class="card-img-top" src="assets\images\house_default.jpg">
+      <img *ngIf="Property.Image" class="card-img-top" src="assets\images\{{Property.Image}}.jpg">
+      <img *ngIf="!Property.Image" class="card-img-top" src="assets\images\house_default.jpg">
       <ul class="list-inline text-center member-icons animate">
         <li class="list-inline-item">
           <button class="btn btn-primary" routerLink="/property-detail/{{Property.Id}}"><i class="fa-regular fa-pen-to-square"></i></button>

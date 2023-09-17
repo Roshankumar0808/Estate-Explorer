@@ -1,33 +1,67 @@
 [
     {
     "Id":1,
+    "SellRent": 1,
     "Name":"Ajay Niwas",
     "Type":"House",
-    "Price":11000
+    "Price":11000,
+    "Image": "prop-1"
     },
     {
       "Id":2,
+      "SellRent": 2,
       "Name":"Blue Pearl",
       "Type":"Apartment",
-      "Price":12000
+      "Price":12000,
+      "Image": "prop-2"
     },
     {
         "Id":3,
+        "SellRent": 1,
         "Name":"White Field",
         "Type":"Apartment",
-        "Price":13000
+        "Price":13000,
+        "Image": "prop-3"
     },
     {
           "Id":4,
+          "SellRent": 2,
           "Name":"Raj Bhawan",
           "Type":"House",
-          "Price":14000
+          "Price":14000,
+          "Image": "prop-4"
     },
     {
             "Id":5,
+            "SellRent": 1,
             "Name":"Bharat Builders",
             "Type":"Plot",
-            "Price":15000
-    }   
+            "Price":15000,
+            "Image": "prop-5"
+    } ,
+    {
+      "Id":6,
+      "SellRent": 2,
+      "Name":"Bharat Builders",
+      "Type":"Plot",
+      "Price":15000,
+      "Image": "prop-6"
+   },
+   {
+    "Id":7,
+    "SellRent": 1,
+    "Name":"Bharat Builders",
+    "Type":"Plot",
+    "Price":15000,
+    "Image": "prop-7"
+  },
+  {
+    "Id":8,
+    "SellRent": 2,
+    "Name":"Bharat Builders",
+    "Type":"Plot",
+    "Price":15000,
+    "Image": "prop-8"
+  }     
 
   ]
