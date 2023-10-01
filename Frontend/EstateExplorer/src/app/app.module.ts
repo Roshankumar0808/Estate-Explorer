@@ -10,6 +10,7 @@ import{HttpClientModule}from '@angular/common/http'
 import { HousingService } from './services/housing.service';
 import{AddPropertyComponent} from'./Property/add-property/add-property.component';
 import{PropertyDetailComponent} from'./Property/property-detail/property-detail.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes:Routes=[
   {path: '',component: PropertyListComponent},
@@ -31,6 +32,7 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
