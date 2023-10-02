@@ -8,6 +8,7 @@ import { PropertyCardComponent } from './Property/property-card/property-card.co
 import { PropertyListComponent } from './Property/property-list/property-list.component';
 import{HttpClientModule}from '@angular/common/http'
 import { HousingService } from './services/housing.service';
+import { UserServiceService } from './services/user-service.service';
 import{AddPropertyComponent} from'./Property/add-property/add-property.component';
 import{UserLoginComponent} from'./users/user-login/user-login.component';
 import{UserRegisterComponent} from'./users/user-register/user-register.component';
@@ -43,7 +44,8 @@ const appRoutes:Routes=[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserServiceService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl,Validators,AbstractControl,ValidationErrors} from '@angular/forms';
+import {FormGroup,FormControl,Validators,AbstractControl,ValidationErrors,FormBuilder} from '@angular/forms';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-user-register',
@@ -9,18 +10,28 @@ import {FormGroup,FormControl,Validators,AbstractControl,ValidationErrors} from 
 export class UserRegisterComponent implements OnInit {
   
   registrationForm: FormGroup;
-  constructor() { }
+  user: any={};
+  constructor(private Fb: FormBuilder,private userService: UserServiceService) { }
 
   ngOnInit() {
-    this.registrationForm = new FormGroup({
-      userName:new FormControl(null,Validators.required),
-      email:new FormControl(null,[Validators.required,Validators.email]),
-      password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
-      confirmPassword:new FormControl(null,[Validators.required]),
-      mobile:new FormControl(null,[Validators.required,Validators.maxLength(10)])
-    },this.passwordMatchingValidator)
+    // this.registrationForm = new FormGroup({
+    //   userName:new FormControl(null,Validators.required),
+    //   email:new FormControl(null,[Validators.required,Validators.email]),
+    //   password:new FormControl(null,[Validators.required,Validators.minLength(8)]),
+    //   confirmPassword:new FormControl(null,[Validators.required]),
+    //   mobile:new FormControl(null,[Validators.required,Validators.maxLength(10)])
+    // },this.passwordMatchingValidator)
+    this.createRegistrationForm();
   }
-
+   createRegistrationForm(){
+    this.registrationForm=this.Fb.group({
+      userName: [null,Validators.required],
+      email: [null,[Validators.required,Validators.email]],
+      password:[null,[Validators.required,Validators.minLength(8)]],
+      confirmPassword: [null,Validators.required],
+      mobile: [null,[Validators.required,Validators.maxLength(10)]]
+    },{validators: this.passwordMatchingValidator});
+   }
   passwordMatchingValidator(fc:AbstractControl): ValidationErrors|null{
     return fc.get('password')?.value === fc.get('confirmPassword')?.value? null:{notmatched:true};
   }
@@ -47,6 +58,11 @@ export class UserRegisterComponent implements OnInit {
 
   onSubmit(){
     console.log(this.registrationForm);
+    this.user=Object.assign(this.user,this.registrationForm.value);
+    this.userService.addUser(this.user);
+    this.registrationForm.reset();
   }
+
+
 
 }
