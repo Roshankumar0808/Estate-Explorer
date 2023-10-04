@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as alertyfy from 'alertifyjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,5 +7,17 @@ import { Injectable } from '@angular/core';
 export class AltertifyService {
 
 constructor() { }
+   success(message:string){
+    alertyfy.success(message)
+   }
+
+   warning(message:string){
+    alertyfy.success(message)
+   }
+
+   error(message:string){
+    alertyfy.success(message)
+   }
+
 
 }

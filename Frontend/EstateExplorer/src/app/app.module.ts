@@ -14,6 +14,7 @@ import{UserLoginComponent} from'./users/user-login/user-login.component';
 import{UserRegisterComponent} from'./users/user-register/user-register.component';
 import{PropertyDetailComponent} from'./Property/property-detail/property-detail.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AltertifyService } from './services/Altertify.service';
 
 const appRoutes:Routes=[
   {path: '',component: PropertyListComponent},
@@ -45,7 +46,8 @@ const appRoutes:Routes=[
   ],
   providers: [
     HousingService,
-    UserServiceService
+    UserServiceService,
+    AltertifyService
   ],
   bootstrap: [AppComponent]
 })
