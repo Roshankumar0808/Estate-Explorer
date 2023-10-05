@@ -43,8 +43,9 @@
           <input type="password" class="form-control" formControlName="confirmPassword">
           <span *ngIf="!confirmPassword.valid && (confirmPassword.touched||userSubmitted)" class="error-block">
             <span *ngIf="confirmPassword.errors?.['required']">
-              Please confirm password
+              Please confirm password pcp
             </span>
+
           </span>
           <span *ngIf="registrationForm.errors?.['notmatched'] && (confirmPassword.valid||userSubmitted)" class="error-block">
              Password not matched
